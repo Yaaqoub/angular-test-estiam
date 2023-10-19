@@ -4,19 +4,19 @@ import {Observable} from "rxjs";
 import {Post} from "../interfaces/post.interface";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class PostService {
-  private apiHost = 'https://jsonplaceholder.typicode.com';
+    private apiHost = 'https://jsonplaceholder.typicode.com';
 
-  constructor(private http: HttpClient) {
-  }
+    constructor(private http: HttpClient) {
+    }
 
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.apiHost}/posts`);
-  }
+    getPosts(): Observable<Post[]> {
+        return this.http.get<Post[]>(`${this.apiHost}/posts`);
+    }
+
+    createPost(post: Post): Observable<Post> {
+        return this.http.post<Post>(`${this.apiHost}/posts`, post);
+    }
 }
-
-// "aaaaaa"
-// 'aaaaaaaa'
-// `aaaaaaa`

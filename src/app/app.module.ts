@@ -11,22 +11,32 @@ import {PostViewComponent} from './post/post-view/post-view.component';
 import {PostService} from "./post/post.service";
 import {MatTabsModule} from '@angular/material/tabs';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {PostCreateComponent} from './post/post-create/post-create.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserViewComponent,
-    PostViewComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    MatTableModule,
-    MatTabsModule,
-    BrowserAnimationsModule
-  ],
-  providers: [UserService, PostService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        UserViewComponent,
+        PostViewComponent,
+        PostCreateComponent
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        MatTableModule,
+        MatTabsModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatButtonModule
+    ],
+    providers: [UserService, PostService],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

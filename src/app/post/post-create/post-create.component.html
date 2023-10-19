@@ -1,0 +1,55 @@
+<div class="create-post-container">
+    <h2>Create a new post</h2>
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+        <div class="post-form-input">
+            <mat-form-field appearance="fill">
+                <mat-label>User ID</mat-label>
+                <input
+                    matInput
+                    placeholder="Type your user ID"
+                    type="number"
+                    id="userId"
+                    formControlName="userId"
+                >
+            </mat-form-field>
+        </div>
+
+        <div class="post-form-input">
+            <mat-form-field appearance="fill">
+                <mat-label>Title</mat-label>
+                <input
+                    matInput
+                    placeholder="Type your post title"
+                    type="text"
+                    id="title"
+                    formControlName="title"
+                >
+            </mat-form-field>
+        </div>
+
+        <div class="post-form-input">
+            <mat-form-field appearance="fill">
+                <mat-label>Body</mat-label>
+                <textarea
+                    matInput
+                    placeholder="Type your post content"
+                    id="body"
+                    formControlName="body"
+                ></textarea>
+            </mat-form-field>
+        </div>
+
+        <div *ngIf="errorMessage">
+            {{errorMessage}}
+        </div>
+
+        <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="postForm.invalid"
+        >
+            Create Post
+        </button>
+    </form>
+</div>
