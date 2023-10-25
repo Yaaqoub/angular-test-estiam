@@ -16,13 +16,22 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import {AppRoutingModule} from './app-routing.module';
+import {TopBarComponent} from './common/top-bar/top-bar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {SpinnerComponent} from './common/spinner/spinner.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
     declarations: [
         AppComponent,
         UserViewComponent,
         PostViewComponent,
-        PostCreateComponent
+        PostCreateComponent,
+        TopBarComponent,
+        SpinnerComponent
     ],
     imports: [
         BrowserModule,
@@ -33,7 +42,12 @@ import {MatButtonModule} from '@angular/material/button';
         ReactiveFormsModule,
         MatInputModule,
         MatFormFieldModule,
-        MatButtonModule
+        MatButtonModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatProgressSpinnerModule,
+        MatCardModule
     ],
     providers: [UserService, PostService],
     bootstrap: [AppComponent]

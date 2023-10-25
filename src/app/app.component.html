@@ -1,13 +1,4 @@
-<mat-tab-group animationDuration="0ms">
-    <mat-tab label="Users">
-        <app-user-view></app-user-view>
-    </mat-tab>
-
-    <mat-tab label="Posts">
-        <app-post-view></app-post-view>
-    </mat-tab>
-
-    <mat-tab label="Create Post">
-        <app-post-create></app-post-create>
-    </mat-tab>
-</mat-tab-group>
+<app-top-bar></app-top-bar>
+<div class="main-content">
+    <router-outlet></router-outlet>
+</div>

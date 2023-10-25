@@ -3,20 +3,27 @@ import {Post} from "../../interfaces/post.interface";
 import {PostService} from "../post.service";
 
 @Component({
-  selector: 'app-post-view',
-  templateUrl: './post-view.component.html',
-  styleUrls: ['./post-view.component.css']
+    selector: 'app-post-view',
+    templateUrl: './post-view.component.html',
+    styleUrls: ['./post-view.component.css']
 })
 export class PostViewComponent implements OnInit {
-  posts: Post[] = [];
+    posts: Post[] = [];
+    isPostsLoading: boolean = true;
+    showCreatePost: boolean = false;
 
-  constructor(private postService: PostService) {
-  }
+    constructor(private postService: PostService) {
+    }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
 
-    this.postService.getPosts().subscribe(posts => {
-      this.posts = posts;
-    });
-  }
+        this.postService.getPosts().subscribe(posts => {
+            this.posts = posts;
+            this.isPostsLoading = false;
+        });
+    }
+
+    toggleCreatePost() {
+        this.showCreatePost = !this.showCreatePost;
+    }
 }

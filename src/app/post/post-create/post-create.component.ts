@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {PostService} from "../post.service";
+import {CustomPostFormValidators} from "./validators";
 
 @Component({
     selector: 'app-post-create',
@@ -13,9 +14,9 @@ export class PostCreateComponent {
 
     constructor(private fb: FormBuilder, private postService: PostService) {
         this.postForm = this.fb.group({
-            userId: [1, Validators.required],
-            title: ['', Validators.required],
-            body: ['', Validators.required],
+            userId: [1, [Validators.required, CustomPostFormValidators.userIdValidator]],
+            title: ['', [Validators.required, CustomPostFormValidators.titleValidator]],
+            body: ['', [Validators.required, CustomPostFormValidators.bodyValidator]],
         });
     }
 
