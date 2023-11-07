@@ -11,6 +11,12 @@
                     id="userId"
                     formControlName="userId"
                 >
+                <mat-error *ngIf="postForm.get('userId')?.hasError('required')">
+                    User ID is required.
+                </mat-error>
+                <mat-error *ngIf="postForm.get('userId')?.hasError('invalidUserId')">
+                    User ID must be a number between 1 and 9999.
+                </mat-error>
             </mat-form-field>
         </div>
 
@@ -24,6 +30,12 @@
                     id="title"
                     formControlName="title"
                 >
+                <mat-error *ngIf="postForm.get('title')?.hasError('required')">
+                    Title is required.
+                </mat-error>
+                <mat-error *ngIf="postForm.get('title')?.hasError('invalidTitle')">
+                    Title must be less than 255 char.
+                </mat-error>
             </mat-form-field>
         </div>
 
@@ -36,6 +48,12 @@
                     id="body"
                     formControlName="body"
                 ></textarea>
+                <mat-error *ngIf="postForm.get('body')?.hasError('required')">
+                    Body is required.
+                </mat-error>
+                <mat-error *ngIf="postForm.get('body')?.hasError('invalidBody')">
+                    Body must be at least 20 chars.
+                </mat-error>
             </mat-form-field>
         </div>
 

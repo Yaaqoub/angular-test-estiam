@@ -23,6 +23,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {SpinnerComponent} from './common/spinner/spinner.component';
 import {MatCardModule} from '@angular/material/card';
+import {LoginFormComponent} from './auth/login-form/login-form.component';
+
 
 @NgModule({
     declarations: [
@@ -31,7 +33,8 @@ import {MatCardModule} from '@angular/material/card';
         PostViewComponent,
         PostCreateComponent,
         TopBarComponent,
-        SpinnerComponent
+        SpinnerComponent,
+        LoginFormComponent
     ],
     imports: [
         BrowserModule,
